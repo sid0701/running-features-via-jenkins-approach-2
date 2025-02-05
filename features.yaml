@@ -1,0 +1,11 @@
+version: "3"
+services:
+  features:
+    image: sid0701/java-selenium-cucumber-docker-1
+    environment:
+      - HUB_HOST=hub
+      - BROWSER
+      - THREAD_COUNT=2
+      - TAGS=@FlightSearch
+    volumes:
+      - ./docker-output/:/home/output/
