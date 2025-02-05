@@ -23,7 +23,7 @@ pipeline{
             bat "docker-compose -f grid.yaml down"
             bat "docker-compose -f features.yaml down"
             archiveArtifacts artifacts: 'docker-output/results.html', followSymlinks: false
-            archiveArtifacts artifacts: 'docker-output/testLogs.txt', followSymlinks: false
+            archiveArtifacts artifacts: 'docker-output/testLogs.log', followSymlinks: false
         }
     }
 }
