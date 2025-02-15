@@ -8,12 +8,12 @@ pipeline{
     stages{
         stage("Start Grid"){
             steps{
-                bat "docker-compose -f grid.yaml up --scale ${params.Browser}=2 -d"
+                sh "docker-compose -f grid.yaml up --scale ${params.Browser}=2 -d"
             }
         }
         stage("Execute Test Suites"){
             steps{
-                bat "docker-compose -f features.yaml up --pull=always"
+                sh "docker-compose -f features.yaml up --pull=always"
             }
         }
         }
